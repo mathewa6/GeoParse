@@ -7,21 +7,11 @@
 //
 
 /**
- Imported in GSNObject.m
+ Imported in GSNObject.h
  Helps import all objects that conform to GSNGeometry protocol.
  */
 #ifndef __GSNGEOMETRIES__
 #define __GSNGEOMETRIES__
-
-#import "GSNPoint.h"
-#import "GSNMultiPoint.h"
-#import "GSNLineString.h"
-#import "GSNMultiLineString.h"
-#import "GSNPolygon.h"
-#import "GSNMultiPolygon.h"
-#import "GSNGeometryCollection.h"
-#import "GSNFeature.h"
-#import "GSNFeatureCollection.h"
 
 typedef NS_ENUM(NSUInteger, GSNObjectType) {
     kGSNObjectTypeFeature = 8,
@@ -35,7 +25,7 @@ typedef NS_ENUM(NSUInteger, GSNGeometryType) {
     kGSNGeometryTypeMultiLineString,
     kGSNGeometryTypePolygon,
     kGSNGeometryTypeMultiPolygon,
-    kGSNGeometryTypeCollection,
+    kGSNGeometryTypeCollection
     
 };
 

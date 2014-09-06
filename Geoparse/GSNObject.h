@@ -12,6 +12,8 @@
 #import "GSNJSONFriendly.h"
 #import "GSNGeometry.h"
 #import "GSNCRSObject.h"
+#import "GSNObjectTypes.h"
+#import "NSDictionary+GSNObjectMethods.h"
 
 @interface GSNObject : NSObject <JSONFriendly>
 

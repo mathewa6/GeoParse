@@ -21,6 +21,11 @@
     return [GSNObject objectFromDictionary:self.geometry];
 }
 
+-(GSNGeometryType)geometryType
+{
+    return [self.geometry typeOfObjectContained];
+}
+
 - (NSDictionary *)convertToJSONObject
 {
     return [NSDictionary dictionaryWithObjects:@[self.type, self.id, self.bbox, self.properties, self.geometry]
@@ -43,7 +48,7 @@
 
         _properties = [feature objectForKey:@"properties"];
         _geometry = [feature objectForKey:@"geometry"];
-        _geometryType = feature[@"geometry"][@"type"];
+        _geometryTypeString = feature[@"geometry"][@"type"];
         _id = [feature objectForKey:@"id"];
         _name = feature[@"properties"][@"name"];
         if (!_name || [_name isEqual:[NSNull null]]) {
@@ -114,7 +119,7 @@ static void boundingBoxForArray(NSArray *array, double *lowLong, double *lowLat,
     }
     
     return ([self.type isEqualToString:feature.type] &&
-            [self.geometryType isEqualToString:feature.geometryType] &&
+            [self.geometryTypeString isEqualToString:feature.geometryTypeString] &&
             [self.geometry isEqualToDictionary:feature.geometry]);
 }
 
@@ -132,7 +137,7 @@ static void boundingBoxForArray(NSArray *array, double *lowLong, double *lowLat,
 
 - (NSUInteger)hash
 {
-    return [self.type hash] ^ [self.geometryType hash] ^ [self.geometry hash];
+    return [self.type hash] ^ [self.geometryTypeString hash] ^ [self.geometry hash];
 }
 
 @end

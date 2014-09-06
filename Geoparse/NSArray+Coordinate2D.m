@@ -84,7 +84,7 @@ static inline CLLocationCoordinate2D geometricCenter(NSArray *array)
     return CLLocationCoordinate2DMake(0.0, 0.0);
 }
 
-static CLLocationCoordinate2D geographicCenter(NSArray *array)
+__unused static CLLocationCoordinate2D geographicCenter(NSArray *array)
 {
     if ([array count] == 4) {
         CLLocationCoordinate2D upperRight = CLLocationCoordinate2DMake([array[3] doubleValue], [array[2] doubleValue]);

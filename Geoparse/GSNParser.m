@@ -12,7 +12,7 @@
 
 @implementation GSNParser
 
--(void)parseFile:(NSString *)filename withDelegate:(id<GSNParserDelegate>)delegate
+-(void)parseFile:(NSString *)filename
 {
     NSArray *filenameComponents = [filename componentsSeparatedByString:@"."];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:[filenameComponents firstObject]
@@ -37,10 +37,12 @@
                                                               error:&error];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                if ([object isKindOfClass:[NSDictionary class]]) {
-                    [delegate didParseGeoJSONObject:[GSNObject objectFromDictionary:object]];
-                } else {
-                    [delegate didParseGeoJSONObject:nil];
+                if (self.delegate && [self.delegate conformsToProtocol:@protocol(GSNParserDelegate)]) {
+                    if ([object isKindOfClass:[NSDictionary class]]) {
+                        [self.delegate didParseGeoJSONObject:[GSNObject objectFromDictionary:object]];
+                    } else {
+                        [self.delegate didParseGeoJSONObject:nil];
+                    }
                 }
             });
             

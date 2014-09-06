@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 RCPD. All rights reserved.
 //
 
-#import "GSNObjectClasses/GSNObjectTypes.h"
+#import "GSNObjectTypes.h"
 
 @interface NSDictionary (GSNObjectMethods)
 

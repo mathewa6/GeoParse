@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9733750F19BB9CCF00F4F68B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9733750E19BB9CCF00F4F68B /* Foundation.framework */; };
+		9733751119BB9CCF00F4F68B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9733751019BB9CCF00F4F68B /* CoreGraphics.framework */; };
+		9733751319BB9CCF00F4F68B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9733751219BB9CCF00F4F68B /* UIKit.framework */; };
+		9733751919BB9CCF00F4F68B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9733751719BB9CCF00F4F68B /* InfoPlist.strings */; };
+		9733751B19BB9CCF00F4F68B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733751A19BB9CCF00F4F68B /* main.m */; };
+		9733751F19BB9CCF00F4F68B /* PEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733751E19BB9CCF00F4F68B /* PEAppDelegate.m */; };
+		9733752219BB9CCF00F4F68B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9733752019BB9CCF00F4F68B /* Main.storyboard */; };
+		9733752519BB9CCF00F4F68B /* PEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733752419BB9CCF00F4F68B /* PEViewController.m */; };
+		9733752719BB9CCF00F4F68B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9733752619BB9CCF00F4F68B /* Images.xcassets */; };
+		9733752E19BB9CCF00F4F68B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9733752D19BB9CCF00F4F68B /* XCTest.framework */; };
+		9733752F19BB9CCF00F4F68B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9733750E19BB9CCF00F4F68B /* Foundation.framework */; };
+		9733753019BB9CCF00F4F68B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9733751219BB9CCF00F4F68B /* UIKit.framework */; };
+		9733753819BB9CCF00F4F68B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9733753619BB9CCF00F4F68B /* InfoPlist.strings */; };
+		9733753A19BB9CCF00F4F68B /* ParserExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733753919BB9CCF00F4F68B /* ParserExampleTests.m */; };
+		9733759C19BB9FAD00F4F68B /* GSNCRSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733757919BB9FAD00F4F68B /* GSNCRSObject.m */; };
+		9733759D19BB9FAD00F4F68B /* GSNErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733757B19BB9FAD00F4F68B /* GSNErrors.m */; };
+		9733759E19BB9FAD00F4F68B /* GSNFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733757D19BB9FAD00F4F68B /* GSNFeature.m */; };
+		9733759F19BB9FAD00F4F68B /* GSNFeatureCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733757F19BB9FAD00F4F68B /* GSNFeatureCollection.m */; };
+		973375A019BB9FAD00F4F68B /* GSNGeometryCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733758219BB9FAD00F4F68B /* GSNGeometryCollection.m */; };
+		973375A119BB9FAD00F4F68B /* GSNLineString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733758519BB9FAD00F4F68B /* GSNLineString.m */; };
+		973375A219BB9FAD00F4F68B /* GSNMultiLineString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733758719BB9FAD00F4F68B /* GSNMultiLineString.m */; };
+		973375A319BB9FAD00F4F68B /* GSNMultiPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733758919BB9FAD00F4F68B /* GSNMultiPoint.m */; };
+		973375A419BB9FAD00F4F68B /* GSNMultiPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733758B19BB9FAD00F4F68B /* GSNMultiPolygon.m */; };
+		973375A519BB9FAD00F4F68B /* GSNObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733758D19BB9FAD00F4F68B /* GSNObject.m */; };
+		973375A619BB9FAD00F4F68B /* GSNParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733759019BB9FAD00F4F68B /* GSNParser.m */; };
+		973375A719BB9FAD00F4F68B /* GSNPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733759319BB9FAD00F4F68B /* GSNPoint.m */; };
+		973375A819BB9FAD00F4F68B /* GSNPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733759519BB9FAD00F4F68B /* GSNPolygon.m */; };
+		973375A919BB9FAD00F4F68B /* GSNPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733759719BB9FAD00F4F68B /* GSNPosition.m */; };
+		973375AA19BB9FAD00F4F68B /* NSArray+Coordinate2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733759919BB9FAD00F4F68B /* NSArray+Coordinate2D.m */; };
+		973375AB19BB9FAD00F4F68B /* NSDictionary+GSNObjectMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9733759B19BB9FAD00F4F68B /* NSDictionary+GSNObjectMethods.m */; };
+		973375AD19BBA35300F4F68B /* Countries.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 973375AC19BBA35300F4F68B /* Countries.geojson */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9733753119BB9CCF00F4F68B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9733750319BB9CCF00F4F68B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9733750A19BB9CCF00F4F68B;
+			remoteInfo = ParserExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9733750B19BB9CCF00F4F68B /* ParserExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParserExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9733750E19BB9CCF00F4F68B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9733751019BB9CCF00F4F68B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9733751219BB9CCF00F4F68B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9733751619BB9CCF00F4F68B /* ParserExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParserExample-Info.plist"; sourceTree = "<group>"; };
+		9733751819BB9CCF00F4F68B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9733751A19BB9CCF00F4F68B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9733751C19BB9CCF00F4F68B /* ParserExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParserExample-Prefix.pch"; sourceTree = "<group>"; };
+		9733751D19BB9CCF00F4F68B /* PEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PEAppDelegate.h; sourceTree = "<group>"; };
+		9733751E19BB9CCF00F4F68B /* PEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PEAppDelegate.m; sourceTree = "<group>"; };
+		9733752119BB9CCF00F4F68B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9733752319BB9CCF00F4F68B /* PEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PEViewController.h; sourceTree = "<group>"; };
+		9733752419BB9CCF00F4F68B /* PEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PEViewController.m; sourceTree = "<group>"; };
+		9733752619BB9CCF00F4F68B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9733752C19BB9CCF00F4F68B /* ParserExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParserExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9733752D19BB9CCF00F4F68B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9733753519BB9CCF00F4F68B /* ParserExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParserExampleTests-Info.plist"; sourceTree = "<group>"; };
+		9733753719BB9CCF00F4F68B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9733753919BB9CCF00F4F68B /* ParserExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParserExampleTests.m; sourceTree = "<group>"; };
+		9733757819BB9FAD00F4F68B /* GSNCRSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNCRSObject.h; path = ../../Geoparse/GSNCRSObject.h; sourceTree = "<group>"; };
+		9733757919BB9FAD00F4F68B /* GSNCRSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNCRSObject.m; path = ../../Geoparse/GSNCRSObject.m; sourceTree = "<group>"; };
+		9733757A19BB9FAD00F4F68B /* GSNErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNErrors.h; path = ../../Geoparse/GSNErrors.h; sourceTree = "<group>"; };
+		9733757B19BB9FAD00F4F68B /* GSNErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNErrors.m; path = ../../Geoparse/GSNErrors.m; sourceTree = "<group>"; };
+		9733757C19BB9FAD00F4F68B /* GSNFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNFeature.h; path = ../../Geoparse/GSNFeature.h; sourceTree = "<group>"; };
+		9733757D19BB9FAD00F4F68B /* GSNFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNFeature.m; path = ../../Geoparse/GSNFeature.m; sourceTree = "<group>"; };
+		9733757E19BB9FAD00F4F68B /* GSNFeatureCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNFeatureCollection.h; path = ../../Geoparse/GSNFeatureCollection.h; sourceTree = "<group>"; };
+		9733757F19BB9FAD00F4F68B /* GSNFeatureCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNFeatureCollection.m; path = ../../Geoparse/GSNFeatureCollection.m; sourceTree = "<group>"; };
+		9733758019BB9FAD00F4F68B /* GSNGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNGeometry.h; path = ../../Geoparse/GSNGeometry.h; sourceTree = "<group>"; };
+		9733758119BB9FAD00F4F68B /* GSNGeometryCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNGeometryCollection.h; path = ../../Geoparse/GSNGeometryCollection.h; sourceTree = "<group>"; };
+		9733758219BB9FAD00F4F68B /* GSNGeometryCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNGeometryCollection.m; path = ../../Geoparse/GSNGeometryCollection.m; sourceTree = "<group>"; };
+		9733758319BB9FAD00F4F68B /* GSNJSONFriendly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNJSONFriendly.h; path = ../../Geoparse/GSNJSONFriendly.h; sourceTree = "<group>"; };
+		9733758419BB9FAD00F4F68B /* GSNLineString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNLineString.h; path = ../../Geoparse/GSNLineString.h; sourceTree = "<group>"; };
+		9733758519BB9FAD00F4F68B /* GSNLineString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNLineString.m; path = ../../Geoparse/GSNLineString.m; sourceTree = "<group>"; };
+		9733758619BB9FAD00F4F68B /* GSNMultiLineString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNMultiLineString.h; path = ../../Geoparse/GSNMultiLineString.h; sourceTree = "<group>"; };
+		9733758719BB9FAD00F4F68B /* GSNMultiLineString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNMultiLineString.m; path = ../../Geoparse/GSNMultiLineString.m; sourceTree = "<group>"; };
+		9733758819BB9FAD00F4F68B /* GSNMultiPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNMultiPoint.h; path = ../../Geoparse/GSNMultiPoint.h; sourceTree = "<group>"; };
+		9733758919BB9FAD00F4F68B /* GSNMultiPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNMultiPoint.m; path = ../../Geoparse/GSNMultiPoint.m; sourceTree = "<group>"; };
+		9733758A19BB9FAD00F4F68B /* GSNMultiPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNMultiPolygon.h; path = ../../Geoparse/GSNMultiPolygon.h; sourceTree = "<group>"; };
+		9733758B19BB9FAD00F4F68B /* GSNMultiPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNMultiPolygon.m; path = ../../Geoparse/GSNMultiPolygon.m; sourceTree = "<group>"; };
+		9733758C19BB9FAD00F4F68B /* GSNObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNObject.h; path = ../../Geoparse/GSNObject.h; sourceTree = "<group>"; };
+		9733758D19BB9FAD00F4F68B /* GSNObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNObject.m; path = ../../Geoparse/GSNObject.m; sourceTree = "<group>"; };
+		9733758E19BB9FAD00F4F68B /* GSNObjectTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNObjectTypes.h; path = ../../Geoparse/GSNObjectTypes.h; sourceTree = "<group>"; };
+		9733758F19BB9FAD00F4F68B /* GSNParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNParser.h; path = ../../Geoparse/GSNParser.h; sourceTree = "<group>"; };
+		9733759019BB9FAD00F4F68B /* GSNParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNParser.m; path = ../../Geoparse/GSNParser.m; sourceTree = "<group>"; };
+		9733759119BB9FAD00F4F68B /* GSNParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNParserDelegate.h; path = ../../Geoparse/GSNParserDelegate.h; sourceTree = "<group>"; };
+		9733759219BB9FAD00F4F68B /* GSNPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNPoint.h; path = ../../Geoparse/GSNPoint.h; sourceTree = "<group>"; };
+		9733759319BB9FAD00F4F68B /* GSNPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNPoint.m; path = ../../Geoparse/GSNPoint.m; sourceTree = "<group>"; };
+		9733759419BB9FAD00F4F68B /* GSNPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNPolygon.h; path = ../../Geoparse/GSNPolygon.h; sourceTree = "<group>"; };
+		9733759519BB9FAD00F4F68B /* GSNPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNPolygon.m; path = ../../Geoparse/GSNPolygon.m; sourceTree = "<group>"; };
+		9733759619BB9FAD00F4F68B /* GSNPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSNPosition.h; path = ../../Geoparse/GSNPosition.h; sourceTree = "<group>"; };
+		9733759719BB9FAD00F4F68B /* GSNPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSNPosition.m; path = ../../Geoparse/GSNPosition.m; sourceTree = "<group>"; };
+		9733759819BB9FAD00F4F68B /* NSArray+Coordinate2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Coordinate2D.h"; path = "../../Geoparse/NSArray+Coordinate2D.h"; sourceTree = "<group>"; };
+		9733759919BB9FAD00F4F68B /* NSArray+Coordinate2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Coordinate2D.m"; path = "../../Geoparse/NSArray+Coordinate2D.m"; sourceTree = "<group>"; };
+		9733759A19BB9FAD00F4F68B /* NSDictionary+GSNObjectMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+GSNObjectMethods.h"; path = "../../Geoparse/NSDictionary+GSNObjectMethods.h"; sourceTree = "<group>"; };
+		9733759B19BB9FAD00F4F68B /* NSDictionary+GSNObjectMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+GSNObjectMethods.m"; path = "../../Geoparse/NSDictionary+GSNObjectMethods.m"; sourceTree = "<group>"; };
+		973375AC19BBA35300F4F68B /* Countries.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countries.geojson; sourceTree = "<group>"; };
+		973375AE19BBB76400F4F68B /* GSNAllGeometries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSNAllGeometries.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9733750819BB9CCF00F4F68B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9733751119BB9CCF00F4F68B /* CoreGraphics.framework in Frameworks */,
+				9733751319BB9CCF00F4F68B /* UIKit.framework in Frameworks */,
+				9733750F19BB9CCF00F4F68B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9733752919BB9CCF00F4F68B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9733752E19BB9CCF00F4F68B /* XCTest.framework in Frameworks */,
+				9733753019BB9CCF00F4F68B /* UIKit.framework in Frameworks */,
+				9733752F19BB9CCF00F4F68B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9733750219BB9CCF00F4F68B = {
+			isa = PBXGroup;
+			children = (
+				9733751419BB9CCF00F4F68B /* ParserExample */,
+				9733753319BB9CCF00F4F68B /* ParserExampleTests */,
+				9733750D19BB9CCF00F4F68B /* Frameworks */,
+				9733750C19BB9CCF00F4F68B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9733750C19BB9CCF00F4F68B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9733750B19BB9CCF00F4F68B /* ParserExample.app */,
+				9733752C19BB9CCF00F4F68B /* ParserExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9733750D19BB9CCF00F4F68B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9733750E19BB9CCF00F4F68B /* Foundation.framework */,
+				9733751019BB9CCF00F4F68B /* CoreGraphics.framework */,
+				9733751219BB9CCF00F4F68B /* UIKit.framework */,
+				9733752D19BB9CCF00F4F68B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9733751419BB9CCF00F4F68B /* ParserExample */ = {
+			isa = PBXGroup;
+			children = (
+				973375AC19BBA35300F4F68B /* Countries.geojson */,
+				9733751D19BB9CCF00F4F68B /* PEAppDelegate.h */,
+				9733751E19BB9CCF00F4F68B /* PEAppDelegate.m */,
+				9733752019BB9CCF00F4F68B /* Main.storyboard */,
+				9733752319BB9CCF00F4F68B /* PEViewController.h */,
+				9733752419BB9CCF00F4F68B /* PEViewController.m */,
+				9733754319BB9D2900F4F68B /* GeoParse */,
+				9733752619BB9CCF00F4F68B /* Images.xcassets */,
+				9733751519BB9CCF00F4F68B /* Supporting Files */,
+			);
+			path = ParserExample;
+			sourceTree = "<group>";
+		};
+		9733751519BB9CCF00F4F68B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9733751619BB9CCF00F4F68B /* ParserExample-Info.plist */,
+				9733751719BB9CCF00F4F68B /* InfoPlist.strings */,
+				9733751A19BB9CCF00F4F68B /* main.m */,
+				9733751C19BB9CCF00F4F68B /* ParserExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9733753319BB9CCF00F4F68B /* ParserExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				9733753919BB9CCF00F4F68B /* ParserExampleTests.m */,
+				9733753419BB9CCF00F4F68B /* Supporting Files */,
+			);
+			path = ParserExampleTests;
+			sourceTree = "<group>";
+		};
+		9733753419BB9CCF00F4F68B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9733753519BB9CCF00F4F68B /* ParserExampleTests-Info.plist */,
+				9733753619BB9CCF00F4F68B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9733754319BB9D2900F4F68B /* GeoParse */ = {
+			isa = PBXGroup;
+			children = (
+				9733757819BB9FAD00F4F68B /* GSNCRSObject.h */,
+				9733757919BB9FAD00F4F68B /* GSNCRSObject.m */,
+				9733757A19BB9FAD00F4F68B /* GSNErrors.h */,
+				9733757B19BB9FAD00F4F68B /* GSNErrors.m */,
+				9733757C19BB9FAD00F4F68B /* GSNFeature.h */,
+				9733757D19BB9FAD00F4F68B /* GSNFeature.m */,
+				9733757E19BB9FAD00F4F68B /* GSNFeatureCollection.h */,
+				9733757F19BB9FAD00F4F68B /* GSNFeatureCollection.m */,
+				9733758019BB9FAD00F4F68B /* GSNGeometry.h */,
+				9733758119BB9FAD00F4F68B /* GSNGeometryCollection.h */,
+				9733758219BB9FAD00F4F68B /* GSNGeometryCollection.m */,
+				9733758319BB9FAD00F4F68B /* GSNJSONFriendly.h */,
+				9733758419BB9FAD00F4F68B /* GSNLineString.h */,
+				9733758519BB9FAD00F4F68B /* GSNLineString.m */,
+				9733758619BB9FAD00F4F68B /* GSNMultiLineString.h */,
+				9733758719BB9FAD00F4F68B /* GSNMultiLineString.m */,
+				9733758819BB9FAD00F4F68B /* GSNMultiPoint.h */,
+				9733758919BB9FAD00F4F68B /* GSNMultiPoint.m */,
+				9733758A19BB9FAD00F4F68B /* GSNMultiPolygon.h */,
+				9733758B19BB9FAD00F4F68B /* GSNMultiPolygon.m */,
+				9733758C19BB9FAD00F4F68B /* GSNObject.h */,
+				9733758D19BB9FAD00F4F68B /* GSNObject.m */,
+				9733758E19BB9FAD00F4F68B /* GSNObjectTypes.h */,
+				973375AE19BBB76400F4F68B /* GSNAllGeometries.h */,
+				9733758F19BB9FAD00F4F68B /* GSNParser.h */,
+				9733759019BB9FAD00F4F68B /* GSNParser.m */,
+				9733759119BB9FAD00F4F68B /* GSNParserDelegate.h */,
+				9733759219BB9FAD00F4F68B /* GSNPoint.h */,
+				9733759319BB9FAD00F4F68B /* GSNPoint.m */,
+				9733759419BB9FAD00F4F68B /* GSNPolygon.h */,
+				9733759519BB9FAD00F4F68B /* GSNPolygon.m */,
+				9733759619BB9FAD00F4F68B /* GSNPosition.h */,
+				9733759719BB9FAD00F4F68B /* GSNPosition.m */,
+				9733759819BB9FAD00F4F68B /* NSArray+Coordinate2D.h */,
+				9733759919BB9FAD00F4F68B /* NSArray+Coordinate2D.m */,
+				9733759A19BB9FAD00F4F68B /* NSDictionary+GSNObjectMethods.h */,
+				9733759B19BB9FAD00F4F68B /* NSDictionary+GSNObjectMethods.m */,
+			);
+			name = GeoParse;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9733750A19BB9CCF00F4F68B /* ParserExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9733753D19BB9CCF00F4F68B /* Build configuration list for PBXNativeTarget "ParserExample" */;
+			buildPhases = (
+				9733750719BB9CCF00F4F68B /* Sources */,
+				9733750819BB9CCF00F4F68B /* Frameworks */,
+				9733750919BB9CCF00F4F68B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParserExample;
+			productName = ParserExample;
+			productReference = 9733750B19BB9CCF00F4F68B /* ParserExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9733752B19BB9CCF00F4F68B /* ParserExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9733754019BB9CCF00F4F68B /* Build configuration list for PBXNativeTarget "ParserExampleTests" */;
+			buildPhases = (
+				9733752819BB9CCF00F4F68B /* Sources */,
+				9733752919BB9CCF00F4F68B /* Frameworks */,
+				9733752A19BB9CCF00F4F68B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9733753219BB9CCF00F4F68B /* PBXTargetDependency */,
+			);
+			name = ParserExampleTests;
+			productName = ParserExampleTests;
+			productReference = 9733752C19BB9CCF00F4F68B /* ParserExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9733750319BB9CCF00F4F68B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PE;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = RCPD;
+				TargetAttributes = {
+					9733752B19BB9CCF00F4F68B = {
+						TestTargetID = 9733750A19BB9CCF00F4F68B;
+					};
+				};
+			};
+			buildConfigurationList = 9733750619BB9CCF00F4F68B /* Build configuration list for PBXProject "ParserExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9733750219BB9CCF00F4F68B;
+			productRefGroup = 9733750C19BB9CCF00F4F68B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9733750A19BB9CCF00F4F68B /* ParserExample */,
+				9733752B19BB9CCF00F4F68B /* ParserExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9733750919BB9CCF00F4F68B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973375AD19BBA35300F4F68B /* Countries.geojson in Resources */,
+				9733752719BB9CCF00F4F68B /* Images.xcassets in Resources */,
+				9733751919BB9CCF00F4F68B /* InfoPlist.strings in Resources */,
+				9733752219BB9CCF00F4F68B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9733752A19BB9CCF00F4F68B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9733753819BB9CCF00F4F68B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9733750719BB9CCF00F4F68B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9733759C19BB9FAD00F4F68B /* GSNCRSObject.m in Sources */,
+				9733759E19BB9FAD00F4F68B /* GSNFeature.m in Sources */,
+				973375A019BB9FAD00F4F68B /* GSNGeometryCollection.m in Sources */,
+				973375AB19BB9FAD00F4F68B /* NSDictionary+GSNObjectMethods.m in Sources */,
+				973375A419BB9FAD00F4F68B /* GSNMultiPolygon.m in Sources */,
+				973375A319BB9FAD00F4F68B /* GSNMultiPoint.m in Sources */,
+				973375A619BB9FAD00F4F68B /* GSNParser.m in Sources */,
+				9733751B19BB9CCF00F4F68B /* main.m in Sources */,
+				973375A819BB9FAD00F4F68B /* GSNPolygon.m in Sources */,
+				973375AA19BB9FAD00F4F68B /* NSArray+Coordinate2D.m in Sources */,
+				973375A719BB9FAD00F4F68B /* GSNPoint.m in Sources */,
+				973375A119BB9FAD00F4F68B /* GSNLineString.m in Sources */,
+				9733759D19BB9FAD00F4F68B /* GSNErrors.m in Sources */,
+				9733759F19BB9FAD00F4F68B /* GSNFeatureCollection.m in Sources */,
+				973375A519BB9FAD00F4F68B /* GSNObject.m in Sources */,
+				9733752519BB9CCF00F4F68B /* PEViewController.m in Sources */,
+				973375A919BB9FAD00F4F68B /* GSNPosition.m in Sources */,
+				9733751F19BB9CCF00F4F68B /* PEAppDelegate.m in Sources */,
+				973375A219BB9FAD00F4F68B /* GSNMultiLineString.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9733752819BB9CCF00F4F68B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9733753A19BB9CCF00F4F68B /* ParserExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9733753219BB9CCF00F4F68B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9733750A19BB9CCF00F4F68B /* ParserExample */;
+			targetProxy = 9733753119BB9CCF00F4F68B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9733751719BB9CCF00F4F68B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9733751819BB9CCF00F4F68B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9733752019BB9CCF00F4F68B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9733752119BB9CCF00F4F68B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9733753619BB9CCF00F4F68B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9733753719BB9CCF00F4F68B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9733753B19BB9CCF00F4F68B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9733753C19BB9CCF00F4F68B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9733753E19BB9CCF00F4F68B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ParserExample/ParserExample-Prefix.pch";
+				INFOPLIST_FILE = "ParserExample/ParserExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9733753F19BB9CCF00F4F68B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ParserExample/ParserExample-Prefix.pch";
+				INFOPLIST_FILE = "ParserExample/ParserExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9733754119BB9CCF00F4F68B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ParserExample.app/ParserExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ParserExample/ParserExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ParserExampleTests/ParserExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9733754219BB9CCF00F4F68B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ParserExample.app/ParserExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ParserExample/ParserExample-Prefix.pch";
+				INFOPLIST_FILE = "ParserExampleTests/ParserExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9733750619BB9CCF00F4F68B /* Build configuration list for PBXProject "ParserExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9733753B19BB9CCF00F4F68B /* Debug */,
+				9733753C19BB9CCF00F4F68B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9733753D19BB9CCF00F4F68B /* Build configuration list for PBXNativeTarget "ParserExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9733753E19BB9CCF00F4F68B /* Debug */,
+				9733753F19BB9CCF00F4F68B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9733754019BB9CCF00F4F68B /* Build configuration list for PBXNativeTarget "ParserExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9733754119BB9CCF00F4F68B /* Debug */,
+				9733754219BB9CCF00F4F68B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9733750319BB9CCF00F4F68B /* Project object */;
+}

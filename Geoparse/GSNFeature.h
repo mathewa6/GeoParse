@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 RCPD. All rights reserved.
 //
 
-#import "GSNObjectClasses/GSNObject.h"
+#import "GSNObject.h"
 
 @interface GSNFeature : GSNObject <JSONFriendly>
 
@@ -24,13 +24,18 @@
 @property (nonatomic, strong) NSString *id;
 
 /**
- GSNObject containing a geometry type.
+ GSNObject containing a geometry object.
  */
 @property (nonatomic, strong, readonly) GSNObject *geometryObject;
 /**
  NSString with geometry type. Skips initialization of a new GSNObject, for typechecking.
  */
-@property (nonatomic, strong) NSString *geometryType;
+@property (nonatomic, strong) NSString *geometryTypeString;
+/**
+ NS_ENUM GSNGeomtry indicating the type of geometry contained.
+ @see GSNObjectTypes.h
+ */
+@property (nonatomic) GSNGeometryType geometryType;
 /**
  Name of the feature. 
  Can be accessed directly from properties[@"name"], if available.

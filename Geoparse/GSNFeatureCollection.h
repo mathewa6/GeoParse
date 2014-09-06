@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 RCPD. All rights reserved.
 //
 
-#import "GSNObjectClasses/GSNObject.h"
+#import "GSNObject.h"
 
 @interface GSNFeatureCollection : GSNObject <JSONFriendly>
 

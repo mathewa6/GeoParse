@@ -9,18 +9,16 @@
 #import <Foundation/Foundation.h>
 
 #import "GSNParserDelegate.h"
-#import "GSNObjectClasses/GSNObject.h"
-#import "GSNObjectClasses/GSNObjectTypes.h"
-
-//@protocol GSNParserDelegate;
+#import "GSNObject.h"
+#import "GSNAllGeometries.h"
 
 @interface GSNParser : NSObject
 
-@property (nonatomic, strong) NSString *type;
+@property (nonatomic, weak) id<GSNParserDelegate> delegate;
 
 /**
  Reads file from app Bundle with filename parameter formatted as <filename.extensions>.
  */
-- (void)parseFile:(NSString *) filename withDelegate: (id<GSNParserDelegate>)delegate;
+- (void)parseFile:(NSString *) filename;
 
 @end

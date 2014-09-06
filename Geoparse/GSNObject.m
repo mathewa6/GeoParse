@@ -7,7 +7,7 @@
 //
 
 #import "GSNObject.h"
-#import "NSDictionary+GSNObjectMethods.h"
+#import "GSNAllGeometries.h"
 
 @interface GSNObject ()
 
