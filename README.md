@@ -1,7 +1,7 @@
 GeoParse
 ========
 
-![Screenshot](https://github.com/mathewa6/GeoParse/tree/master/Screenshot.png)
+![Screenshot](https://github.com/mathewa6/GeoParse/blob/master/Screenshot.png)
 
 A simple delegate based objective-C GeoJSON parser with some useful tools. GeoParse acts as a layer over NSJSONSerialization to get the root JSON object, which is then parsed into it's corresponding GeoJSON type, in strict accordance with the [GeoJSON format specification](http://www.geojson.org/geojson-spec.html)
 
