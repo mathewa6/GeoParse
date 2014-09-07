@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+#import <CoreLocation/CLLocation.h>
 #import <MapKit/MapKit.h>
 #import "GSNJSONFriendly.h"
 #import "GSNGeometry.h"

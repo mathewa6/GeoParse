@@ -36,6 +36,9 @@
     [parser parseFile:@"Countries.geojson"];
 }
 
+//=======================================================================
+//Implement this function
+//=======================================================================
 -(void)didParseGeoJSONObject:(id)object
 {
     NSMutableArray *overlays = [[NSMutableArray alloc] init];
