@@ -29,7 +29,7 @@
 - (NSDictionary *)convertToJSONObject
 {
     return [NSDictionary dictionaryWithObjects:@[self.type, self.id, self.bbox, self.properties, self.geometry]
-                                       forKeys:@[@"type", @"id", @"properties", @"geometry"]];;
+                                       forKeys:@[@"type", @"id", @"bbox", @"properties", @"geometry"]];
 }
 
 #pragma mark - Initialization methods
