@@ -8,7 +8,7 @@
 
 #import "GSNObject.h"
 
-@interface GSNFeature : GSNObject <JSONFriendly>
+@interface GSNFeature : GSNObject <JSONFriendly, MKAnnotation>
 
 /**
  NSDictionary containing a geometry.
@@ -19,9 +19,9 @@
  */
 @property (nonatomic, strong) NSDictionary *properties;
 /**
- String member to be used as identifier.
+ String member to be used as identifier as per the GeoJSON spec.
  */
-@property (nonatomic, strong) NSString *id;
+@property (nonatomic, strong) NSString *identifier;
 
 /**
  GSNObject containing a geometry object.
@@ -41,13 +41,26 @@
  Can be accessed directly from properties[@"name"], if available.
  */
 @property (nonatomic, strong) NSString *name;
+
 /**
- Determines whether the feature is a building or not. 
- Can be accessed directly from properties[@"building"], if available.
+ MKAnnotation properties.
  */
-@property (nonatomic, readonly, getter=isBuilding) BOOL building;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+
+@property (nonatomic, strong) CLLocation *location;
+
+/**
+ NSArray of CLLocation objects containing the corners that result in the given bbox.
+ */
+@property (nonatomic, strong, readonly) NSArray *cornerPoints;
 
 - (NSDictionary *)convertToJSONObject;
 - (instancetype)initWithJSONDictionary: (NSDictionary *)feature;
+
+- (CLLocationDistance)distanceFrom: (GSNFeature *)feature;
+- (CLLocationDistance)distanceFromLocation: (CLLocation *)location;
+
+CLLocationCoordinate2D* cornerPointsToCLLocationCoordinate2DArray(NSArray *cornerPoints);
 
 @end

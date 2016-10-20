@@ -23,7 +23,7 @@
         coordinate = CLLocationCoordinate2DIsValid(coordinate) ? coordinate : emptyCoordinate;
     }
     
-    return coordinate;
+    return coordinate;    
 }
 
 //Called in GSNLineString -shapeForMapKit. DO NOT Forget to free() returned pointer.
@@ -71,13 +71,18 @@ static inline double toDegrees(double radians)
 
 static inline NSInteger sgn(double value)
 {
-    return (NSInteger)(abs(value)/value);
+    return (NSInteger)(fabs(value)/value);
+}
+
+static inline NSInteger sign(NSNumber *value)
+{
+    return sgn([value doubleValue]);
 }
 
 static inline CLLocationCoordinate2D geometricCenter(NSArray *array)
 {
     if ([array count] == 4) {
-        
+
         return CLLocationCoordinate2DMake(([array[3] doubleValue] + [array[1] doubleValue])/2.0, ([array[2] doubleValue] + [array[0] doubleValue])/2.0);
     }
     
@@ -112,6 +117,14 @@ __unused static CLLocationCoordinate2D geographicCenter(NSArray *array)
     return geometricCenter(self);
 }
 
+-(NSString *)boundingBoxCenterAsString
+{
+    CLLocationCoordinate2D coordinate = geometricCenter(self);
+    NSString *centerString = [NSString stringWithFormat:@"(%f, %f)", coordinate.latitude, coordinate.longitude];
+    
+    return centerString;
+}
+
 -(BOOL)boundingBoxContainsCoordinate2D: (CLLocationCoordinate2D)coordinate
 {
     BOOL isWithinLatitudes = NO;
@@ -128,12 +141,44 @@ __unused static CLLocationCoordinate2D geographicCenter(NSArray *array)
             isWithinLongitudes = YES;
         }
     } else {
-        if (abs([self[2] doubleValue]) <= abs(coordinate.longitude) && abs(coordinate.longitude) > abs([self[0] doubleValue])) {
+        if (fabs([self[2] doubleValue]) <= fabs(coordinate.longitude) && fabs(coordinate.longitude) > fabs([self[0] doubleValue])) {
             isWithinLongitudes = YES;
         }
     }
     
     return (isWithinLatitudes && isWithinLongitudes);
+}
+
+-(BOOL)boundingBoxIntersectsBoundingBox: (NSArray *)bbox {
+
+//    NSLog(@"%f, %f", fabs([bbox[0] doubleValue]), fabs([self[2] doubleValue]) );
+//    
+//    if (sgn([bbox[0] doubleValue]) > 0) {
+//        if (fabs([bbox[0] doubleValue]) > fabs([self[2] doubleValue]) ) return NO;
+//    } else {
+//        if (fabs([bbox[0] doubleValue]) < fabs([self[2] doubleValue]) ) return NO;
+//    }
+//    
+//    if (sgn([bbox[2] doubleValue]) > 0) {
+//        if (fabs([bbox[2] doubleValue]) < fabs([self[0] doubleValue]) ) return NO;
+//    } else {
+//        if (fabs([bbox[2] doubleValue]) > fabs([self[0] doubleValue]) ) return NO;
+//    }
+//    
+//    if (sgn([bbox[3] doubleValue]) > 0) {
+//        if (fabs([bbox[3] doubleValue]) > fabs([self[1] doubleValue]) ) return NO;
+//    } else {
+//        if (fabs([bbox[3] doubleValue]) < fabs([self[1] doubleValue]) ) return NO;
+//    }
+//    
+//    if (sgn([bbox[1] doubleValue]) > 0) {
+//        if (fabs([bbox[1] doubleValue]) < fabs([self[3] doubleValue]) ) return NO;
+//    } else {
+//        if (fabs([bbox[1] doubleValue]) > fabs([self[3] doubleValue]) ) return NO;
+//    }
+//
+//    NSLog(@"AASSDSDSD, %@, %@", bbox, self);
+    return NO;
 }
 
 -(double *)boundingBoxAsCDoubleArray
@@ -173,11 +218,25 @@ __unused static CLLocationCoordinate2D geographicCenter(NSArray *array)
     return [immutableSelf boundingBoxCenter];
 }
 
+-(NSString *)boundingBoxCenterAsString
+{
+    NSArray *immutableSelf = [NSArray arrayWithArray:self];
+    
+    return [immutableSelf boundingBoxCenterAsString];
+}
+
 -(BOOL)boundingBoxContainsCoordinate2D:(CLLocationCoordinate2D)coordinate
 {
     NSArray *immutableSelf = [NSArray arrayWithArray:self];
     
     return [immutableSelf boundingBoxContainsCoordinate2D:coordinate];
+}
+
+-(BOOL)boundingBoxIntersectsBoundingBox: (NSArray *)bbox
+{
+    NSArray *immutableSelf = [NSArray arrayWithArray:self];
+    
+    return [immutableSelf boundingBoxIntersectsBoundingBox:bbox];
 }
 
 -(double *)boundingBoxAsCDoubleArray

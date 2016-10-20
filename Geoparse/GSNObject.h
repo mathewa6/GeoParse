@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CLLocation.h>
+#import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "GSNJSONFriendly.h"
 #import "GSNGeometry.h"
 #import "GSNCRSObject.h"
 #import "GSNObjectTypes.h"
 #import "NSDictionary+GSNObjectMethods.h"
+#import "NSArray+Coordinate2D.h"
+
 
 @interface GSNObject : NSObject <JSONFriendly>
 
@@ -34,6 +36,6 @@
 - (BOOL)isObjectOfType: (NSString *)type;
 
 + (id)objectFromDictionary: (NSDictionary *)dictionary;
-+ (id)objectFromArray: (NSArray *)array ofType: (NSUInteger)geometryType withBBox: (NSArray *)bbox;
++ (id)objectFromArray: (NSArray *)array ofType: (NSUInteger)geometryType withBBox: (NSArray *)bbox named: (NSString *)name;
 
 @end

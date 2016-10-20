@@ -11,6 +11,8 @@
 
 @interface NSArray (Coordinate2D)
 
+//BOUNDING BOXES FORMATTED AS [lowLong, lowLat, hiLong, hiLat]
+
 /**
  If "self" is a GeoJSON format NSArray with 2 elements, then this returns a CLLocationCoordinate2D, otherwise <null>.
  */
@@ -24,9 +26,17 @@
  */
 - (CLLocationCoordinate2D)boundingBoxCenter;
 /**
+ Returns center of Bounding Box as NSString
+ */
+-(NSString *)boundingBoxCenterAsString;
+/**
  If "self" is a GeoJSON format bounding box NSArray with 4 elements, then this returns whether the passed coordinate lies within itself or not.
  */
 - (BOOL)boundingBoxContainsCoordinate2D: (CLLocationCoordinate2D)coordinate;
+/**
+ Returns whether self and parameter bbox intersect.
+ */
+-(BOOL)boundingBoxIntersectsBoundingBox: (NSArray *)bbox;
 /**
  If "self" is a GeoJSON format bounding box NSArray with 4 elements, then this returns a  pointer to  a malloc'ed C Array of doubles.
  */
@@ -49,9 +59,17 @@
  */
 - (CLLocationCoordinate2D)boundingBoxCenter;
 /**
+ Returns center of Bounding Box as NSString
+ */
+-(NSString *)boundingBoxCenterAsString;
+/**
  If "self" is a GeoJSON format bounding box NSMutableArray with 4 elements, then this returns whether the passed coordinate lies within itself or not.
  */
 - (BOOL)boundingBoxContainsCoordinate2D: (CLLocationCoordinate2D)coordinate;
+/**
+ Returns whether self and parameter bbox intersect.
+ */
+-(BOOL)boundingBoxIntersectsBoundingBox: (NSArray *)bbox;
 /**
  If "self" is a GeoJSON format bounding box NSArray with 4 elements, then this returns a  pointer to  a malloc'ed C Array of doubles.
  */

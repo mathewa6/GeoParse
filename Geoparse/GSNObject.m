@@ -45,7 +45,7 @@
                 break;
                 
             case kGSNGeometryTypeCollection:
-                return [self objectFromArray:[dictionary geometriesContained] ofType:kGSNGeometryTypeCollection withBBox:nil];
+                return [self objectFromArray:[dictionary geometriesContained] ofType:kGSNGeometryTypeCollection withBBox:nil named:nil];
                 break;
                 
             case kGSNObjectTypeFeature:
@@ -53,7 +53,7 @@
                 break;
                 
             case kGSNObjectTypeFeatureCollection:
-                return [self objectFromArray:[dictionary featuresContained] ofType:kGSNObjectTypeFeatureCollection withBBox:[dictionary boundingBox]];
+                return [self objectFromArray:[dictionary featuresContained] ofType:kGSNObjectTypeFeatureCollection withBBox:[dictionary boundingBox] named: [dictionary name]];
                 
             default:
                 return [[GSNObject alloc] initWithType:[dictionary objectTypeString]
@@ -80,7 +80,7 @@
     
 }
 
-+ (id)objectFromArray:(NSArray *)array ofType:(NSUInteger)type withBBox: (NSArray *)bbox
++ (id)objectFromArray:(NSArray *)array ofType:(NSUInteger)type withBBox: (NSArray *)bbox named: (NSString *)name
 {
     
     if (array) {
@@ -90,7 +90,7 @@
                 break;
                 
             case kGSNObjectTypeFeatureCollection:
-                return [[GSNFeatureCollection alloc] initWithFeaturesArray:array withBBox: bbox];
+                return [[GSNFeatureCollection alloc] initWithFeaturesArray:array withBBox: bbox named: name];
                 break;
                 
             default:

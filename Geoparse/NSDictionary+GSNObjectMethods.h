@@ -41,5 +41,9 @@
  For use with FeatureCollections. Calls -objectForKey: (id).
  */
 - (NSArray *)featuresContained;
+/**
+ For use with FeatureCollections. Calls -objectForKey: (id).
+ */
+- (NSString *)name;
 
 @end

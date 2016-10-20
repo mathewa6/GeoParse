@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 RCPD. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 /**
  Imported in GSNObject.h
  Helps import all objects that conform to GSNGeometry protocol.

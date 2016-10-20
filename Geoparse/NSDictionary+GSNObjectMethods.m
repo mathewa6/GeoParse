@@ -41,36 +41,34 @@
     return 0;
 }
 
-- (NSString *)objectTypeString
-{
+- (NSString *)objectTypeString {
     return [self objectForKey:@"type"];
 }
 
-- (NSArray *)coordinatesOfGeometryContained
-{
+- (NSArray *)coordinatesOfGeometryContained {
     return [self objectForKey:@"coordinates"];
 }
 
-- (NSDictionary *)coordinateReferenceSystem
-{
+- (NSDictionary *)coordinateReferenceSystem {
     return [self objectForKey:@"crs"];
 }
 
-- (NSArray *)boundingBox
-{
+- (NSArray *)boundingBox {
 //    INSERT CALL TO JIAO's BBOX METHODS HERE'
 //    bbox = bbox();
     return [self objectForKey:@"bbox"];
 }
 
-- (NSArray *)geometriesContained
-{
+- (NSArray *)geometriesContained {
     return [self objectForKey:@"geometries"];
 }
 
-- (NSArray *)featuresContained
-{
+- (NSArray *)featuresContained {
     return [self objectForKey:@"features"];
+}
+
+-(NSString *)name {
+    return [self objectForKey:@"name"];
 }
 
 @end

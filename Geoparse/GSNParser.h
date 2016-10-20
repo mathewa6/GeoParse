@@ -17,8 +17,12 @@
 @property (nonatomic, weak) id<GSNParserDelegate> delegate;
 
 /**
- Reads file from app Bundle with filename parameter formatted as <filename.extensions>.
+ Reads file from app Bundle with filename parameter formatted as @"filename.geojson".
  */
-- (void)parseFile:(NSString *) filename;
+- (void)parseFile: (NSString *) filename; // withDelegate: (id<GSNParserDelegate>)delegate;
+/**
+ Reads file from a web URL and passes it to delegate when done.
+ */
+- (void)parseURL: (NSString *) url; // withDelegate: (id<GSNParserDelegate>)delegate;
 
 @end

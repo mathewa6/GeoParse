@@ -12,7 +12,7 @@
 
 @implementation GSNParser
 
--(void)parseFile:(NSString *)filename
+-(void)parseFile:(NSString *)filename // withDelegate:(id<GSNParserDelegate>)delegate
 {
     NSArray *filenameComponents = [filename componentsSeparatedByString:@"."];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:[filenameComponents firstObject]
@@ -37,18 +37,49 @@
                                                               error:&error];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                if (self.delegate && [self.delegate conformsToProtocol:@protocol(GSNParserDelegate)]) {
-                    if ([object isKindOfClass:[NSDictionary class]]) {
-                        [self.delegate didParseGeoJSONObject:[GSNObject objectFromDictionary:object]];
-                    } else {
-                        [self.delegate didParseGeoJSONObject:nil];
-                    }
-                }
+                [self callDelegateWithDictionary:object];
             });
             
         });
     } else {
         NSLog(@"Error Domain: %@, Error Code: %lu", error.domain, (unsigned long)error.code);
+    }
+}
+
+-(void)parseURL:(NSString *)url // withDelegate:(id<GSNParserDelegate>)delegate
+{
+    NSURL *jsonURL = [NSURL URLWithString:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:jsonURL];
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request
+                                                    completionHandler:^(NSURL *localFile, NSURLResponse *response, NSError *error) {
+                                                        if (!error) {
+                                                            NSError *errorData = nil;
+                                                            NSData *data = [NSData dataWithContentsOfURL:localFile
+                                                                                                 options:NSDataReadingUncached
+                                                                                                   error:&errorData];
+                                                            NSError *errorJSON = nil;
+                                                            NSDictionary *object = [NSJSONSerialization JSONObjectWithData:data
+                                                                                                                   options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments
+                                                                                                                     error:&errorJSON];
+                                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                                [self callDelegateWithDictionary:object];
+                                                                
+                                                            });
+                                                        }
+                                                    }];
+    [task resume];
+}
+
+-(void)callDelegateWithDictionary: (NSDictionary *)dictionary
+{
+    if (self.delegate && [self.delegate conformsToProtocol:@protocol(GSNParserDelegate)]) {
+        if ([dictionary isKindOfClass:[NSDictionary class]]) {
+            [self.delegate didParseGeoJSONObject:[GSNObject objectFromDictionary:dictionary]];
+        } else {
+            [self.delegate didParseGeoJSONObject:nil];
+        }
     }
 }
 

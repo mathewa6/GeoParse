@@ -7,10 +7,10 @@
 //
 
 #import "GSNFeatureCollection.h"
-#import "GSNFeature.h"
 
 @interface GSNFeatureCollection ()
 
+@property (nonatomic, assign) GSNFeatureCollectionType collectionType;
 @property (nonatomic, strong) NSMutableArray *featureObjectsMutable;
 
 @end
@@ -21,20 +21,43 @@
 {
     if (!_featureObjectsMutable) {
         _featureObjectsMutable = [[NSMutableArray alloc] init];
-        for (NSDictionary *feature in self.features) {
-            [_featureObjectsMutable addObject:[[GSNFeature alloc] initWithJSONDictionary:feature]];
+        switch (_collectionType) {
+            case kGSNFeatureCollectionTypeBuilding:
+                for (NSDictionary *feature in self.features) {
+                    [_featureObjectsMutable addObject:[[GSNBuildingFeature alloc] initWithJSONDictionary:feature]];
+                }
+                break;
+                
+            case kGSNFeatureCollectionTypeEntrance:
+                for (NSDictionary *feature in self.features) {
+                    [_featureObjectsMutable addObject:[[GSNEntranceFeature alloc] initWithJSONDictionary:feature]];
+                }
+                break;
+                
+            default:
+                for (NSDictionary *feature in self.features) {
+                    [_featureObjectsMutable addObject:[[GSNFeature alloc] initWithJSONDictionary:feature]];
+                }
+                break;
         }
+        
     }
     
-    return [_featureObjectsMutable copy];
+    return _featureObjectsMutable;
 }
 
-- (instancetype)initWithFeaturesArray:(NSArray *)features withBBox:(NSArray *)bbox
+- (instancetype)initWithFeaturesArray:(NSArray *)features withBBox:(NSArray *)bbox named:(NSString *)name
 {
     self = [super init];
     if (self) {
         self.type = @"FeatureCollection";
         self.bbox = bbox;
+        _name = name;
+        if ([name isEqualToString:@"buildings"]) {
+            _collectionType = kGSNFeatureCollectionTypeBuilding;
+        } else if ([name isEqualToString:@"entrances"]) {
+            _collectionType = kGSNFeatureCollectionTypeEntrance;
+        }
         _features = features;
         
         //if self.bbox is not included from file, CALCULATE it!. << potentially intensive.
@@ -84,7 +107,7 @@ static void boundingBoxForArray(NSArray *array, double *lowLong, double *lowLat,
 
 - (instancetype)init
 {
-    return [self initWithFeaturesArray:@[] withBBox:@[]];
+    return [self initWithFeaturesArray:@[] withBBox:@[] named:@""];
 }
 
 - (NSDictionary *)convertToJSONObject
